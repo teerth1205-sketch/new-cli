@@ -34,5 +34,3 @@ class Scrape
 
 
 end 
-Scrape.new.assign_content
-#Scrape.new.content_selector

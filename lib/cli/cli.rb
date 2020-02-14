@@ -116,4 +116,4 @@ class CLI
   
   
 end
-CLI.new.call
+
