@@ -17,6 +17,16 @@ class CLI
   
   end 
   
+  def display_movies 
+    puts "here is a list of the IMDB top 250 Movies:"
+    puts ""
+    puts "" 
+    puts List.all.map{|l| l.title}
+    puts ""
+    puts ""
+    puts ""
+    puts ""
+  end 
   
   def get_input
    puts "                                                            "
@@ -43,14 +53,7 @@ class CLI
     input = nil
     
     while input != "exit" 
-    puts "here is a list of the IMDB top 250 Movies:"
-    puts ""
-    puts "" 
-    puts List.all.map{|l| l.title}
-    puts ""
-    puts ""
-    puts ""
-    puts ""
+    display_movies
     puts "now select a movie by inputing a number associated to the movie"
     puts ""
     
