@@ -57,7 +57,10 @@ class CLI
     input = gets.to_i
    
     @@selected_movies
-    
+    while input < 1 || input > 100
+      puts "Sorry that input was incorrect please type in a number from 1 - 100"
+      input = gets.to_i
+    end
     movie = List.all[input.to_i - 1]
     puts ''
     puts ''
