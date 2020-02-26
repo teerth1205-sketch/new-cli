@@ -84,6 +84,10 @@ class CLI
     puts "4 to view watchlist"
     puts ""
     input = gets.to_i
+    while input < 1 || input > 4
+      puts "sorry that was the wrong input try again"
+      input = gets.to_i
+    end 
     if input == 1 
       list
     elsif input == 2 
@@ -100,6 +104,8 @@ class CLI
     puts"3. clear watchlist"
     puts"" 
     puts""
+
+    
     input = gets.to_i 
     if input == 1
       list
