@@ -64,20 +64,24 @@ class CLI
       puts "Sorry that input was incorrect please type in a number from 1 - 100"
       input = gets.to_i
     end
-    movie = List.all[input.to_i - 1]
+    @movie = List.all[input.to_i - 1]
     puts ''
     puts ''
-    puts movie.title
+    puts @movie.title
     puts 
-    puts " #{movie.rating} -------- #{movie.runtime} ---- #{movie.genre}"
+    puts " #{@movie.rating} -------- #{@movie.runtime} ---- #{@movie.genre}"
     puts ''
     puts ''
     puts "Movie info:"
     puts ''
-    puts movie.paragraph
+    puts @movie.paragraph
     puts ''
     puts ''
     puts ''
+    watchlist
+  end 
+  end 
+  def watchlist
     puts "1 to go back"
     puts "2 to go to the main menu"
     puts "3 to add movie to watchlist"
@@ -93,11 +97,19 @@ class CLI
     elsif input == 2 
       get_input
     elsif input == 3
-      @@selected_movies << movie.title 
+      @@selected_movies << @movie.title 
       
     elsif input == 4 
+    inside_watchlist
+  
+
+    end
+    
+  end 
+   
+   
+ def inside_watchlist
     puts @@selected_movies
-    puts""
     puts""
     puts"1. go back"
     puts"2. go home"
@@ -107,24 +119,27 @@ class CLI
 
     
     input = gets.to_i 
+    
+  while input > 3 || input < 1  
+  puts "wrong input try again"
+   inside_watchlist 
+  end 
     if input == 1
       list
     elsif input == 2 
       get_input
     elsif input == 3
       @@selected_movies.clear
-    else 
-      exit!
     end 
-    else
-      exit!
-    end 
+  
+    
+end 
    
-  end 
+
  
     
     
-  end
+
   
   
 end
