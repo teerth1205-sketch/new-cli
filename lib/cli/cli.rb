@@ -54,6 +54,9 @@ class CLI
     
     input = gets.to_i
    while input < 1 || input > 3
+    puts "wrong input try again"
+    get_input
+   end 
     if input == 1
       list
     elsif input == 2 
