@@ -28,21 +28,40 @@ class CLI
     puts ""
   end 
   
+  def display_selected_movie
+     @movie = List.all[@input.to_i - 1]
+    puts ''
+    puts ''
+    puts @movie.title
+    puts 
+    puts " #{@movie.rating} -------- #{@movie.runtime} ---- #{@movie.genre}"
+    puts ''
+    puts ''
+    puts "Movie info:"
+    puts ''
+    puts @movie.paragraph
+    puts ''
+    puts ''
+    puts ''
+  end 
+  
   def get_input
    puts "                                                            "
    puts ""
    puts "select 1 for a list of the top 100 movies "
    puts "Or if you have already selected your watchlist movies and would like to see the list enter 2"
-   puts ""
+   puts "3 to exit"
     
     input = gets.to_i
-   
+   while input < 1 || input > 3
     if input == 1
       list
     elsif input == 2 
       puts ''
       puts @@selected_movies
       get_input
+    elsif input == 3
+    exit!
     else 
       exit!
     end
@@ -57,30 +76,19 @@ class CLI
     puts "now select a movie by inputing a number associated to the movie"
     puts ""
     
-    input = gets.to_i
+    @input = gets.to_i
    
     @@selected_movies
-    while input < 1 || input > 100
+    while @input < 1 || @input > 100
       puts "Sorry that input was incorrect please type in a number from 1 - 100"
-      input = gets.to_i
+      @input = gets.to_i
     end
-    @movie = List.all[input.to_i - 1]
-    puts ''
-    puts ''
-    puts @movie.title
-    puts 
-    puts " #{@movie.rating} -------- #{@movie.runtime} ---- #{@movie.genre}"
-    puts ''
-    puts ''
-    puts "Movie info:"
-    puts ''
-    puts @movie.paragraph
-    puts ''
-    puts ''
-    puts ''
+    display_selected_movie
     watchlist
   end 
-  end 
+  end
+  
+  
   def watchlist
     puts "1 to go back"
     puts "2 to go to the main menu"
