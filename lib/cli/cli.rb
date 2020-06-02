@@ -18,7 +18,7 @@ class CLI
   end 
   
   def display_movies 
-    puts "here is a list of the IMDB top 250 Movies:"
+    puts "here is a list of the IMDB top 100 Movies:"
     puts ""
     puts "" 
     puts List.all.map{|l| l.title}
