@@ -7,19 +7,11 @@ This gem scrapes info from the IMDB website of top movies and outputs that info 
 
 ## Installation
 
-Add this line to your application's Gemfile:
 
-```ruby
-gem 'new-cli'
-```
-
-And then execute:
+execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install new-cli
 
 ## Usage
 type in ./bin/imdb to interact with the gem, follow the onscreen prompts. 
